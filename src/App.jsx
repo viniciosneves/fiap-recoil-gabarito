@@ -4,6 +4,7 @@ import { Sidebar } from "./components/Sidebar"
 import { Account } from "./components/Account"
 import { TransactionForm } from "./components/TransactionForm"
 import { Statement } from "./components/Statement"
+import { RecoilRoot } from "recoil"
 
 const Container = styled.div`
   display: flex;
@@ -23,6 +24,7 @@ function App() {
 
   return (
     <>
+    <RecoilRoot>
       <Header />
       <Container>
         <Sidebar />
@@ -34,6 +36,7 @@ function App() {
           <Statement />
         </div>
       </Container>
+    </RecoilRoot>
     </>
   )
 }
