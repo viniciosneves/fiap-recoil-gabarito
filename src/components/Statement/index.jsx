@@ -1,34 +1,12 @@
+import { useRecoilValue } from "recoil";
 import { Transaction } from "../Transaction";
 import { Container, Heading, TransactionsList } from "./styles";
-
-const transactions = [
-    {
-        id: 1,
-        value: 150,
-        type: 'Depósito',
-        date: new Date(2022, 10, 18)
-    },
-    {
-        id: 2,
-        value: 200,
-        type: 'Saque',
-        date: new Date(2022, 10, 19)
-    },
-    {
-        id: 3,
-        value: 300,
-        type: 'Transferência',
-        date: new Date(2022, 10, 20)
-    },
-    {
-        id: 4,
-        value: 500,
-        type: 'Depósito',
-        date: new Date(2022, 10, 21)
-    }
-];
+import { transactionSelector } from "../../recoil/selectors/transactionSelector";
 
 export const Statement = () => {
+
+    const transactions = useRecoilValue(transactionSelector);
+
     return (<Container>
         <Heading>
             Extrato
