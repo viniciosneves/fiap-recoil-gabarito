@@ -6,7 +6,7 @@ import { transactionSelector } from "../../recoil/selectors/transactionSelector"
 export const Statement = () => {
 
     const transactions = useRecoilValue(transactionSelector);
-
+    
     return (<Container>
         <Heading>
             Extrato
